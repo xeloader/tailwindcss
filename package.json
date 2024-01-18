@@ -28,7 +28,8 @@
     "build:rust": "npm run --prefix ./oxide build:node",
     "build:js": "npm run generate:plugin-list && swc src --out-dir lib --copy-files --delete-dir-on-start",
     "generate:plugin-list": "node -r @swc/register scripts/create-plugin-list.js",
-    "generate:types": "node -r @swc/register scripts/generate-types.js"
+    "generate:types": "node -r @swc/register scripts/generate-types.js",
+    "postinstall": "npm run build"
   },
   "files": [
     "src/*",
