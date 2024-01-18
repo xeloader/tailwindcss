@@ -135,10 +135,11 @@ export let variantPlugins = {
         !flagEnabled(config(), 'hoverOnlyWhenSupported')
           ? '&:hover'
           : '@media (hover: hover) and (pointer: fine) { &:hover }',
+        '&:is-hovered'
       ],
-      'focus',
+      ['focus', '&.is-focused'],
       'focus-visible',
-      'active',
+      ['active', '&.is-active'],
       'enabled',
       'disabled',
     ].map((variant) => (Array.isArray(variant) ? variant : [variant, `&:${variant}`]))
